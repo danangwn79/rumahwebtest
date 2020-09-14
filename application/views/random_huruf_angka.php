@@ -21,7 +21,7 @@ crossorigin="anonymous"></script>
 $.getJSON( "https://reqres.in/api/users?page=2", function( data ) {
 	let items = [];
 	$.each( data['data'], function( key, val ) {
-		items.push( "<li id='" + key['id'] + "'>" + val['first_name'] + "</li>" );
+		items.push( "<li id='" + key['id'] + "'>" + val['first_name'] +" "+val['first_name']+ "</li>" );
 	});
 
 	$( "<ul/>", {
@@ -37,6 +37,8 @@ $.getJSON( "https://reqres.in/api/users/2", function( data ) {
 	html_view += "Last Name : "+data['data']['last_name']+"\n";
 	html_view += "Link Avatar : "+data['data']['avatar']+"\n";
 	html_view += "Company : "+data['ad']['company']+"\n";
+	html_view += "Url : "+data['ad']['url']+"\n";
+	html_view += "Text : "+data['ad']['text']+"\n";
 	html_view += "<pre>"; 	
 	$(html_view).appendTo( "#nomor4b" );
 });
